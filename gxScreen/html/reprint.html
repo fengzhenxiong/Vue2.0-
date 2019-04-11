@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>广西日报</title>
+    <meta name="referrer" content="no-referrer">
+    <link rel="stylesheet" type="text/css" href="../css/reprint.css" />
+</head>
+
+
+<body>
+    <div class="reprintbox" id="reprintbox">
+        <header class="btnbox">
+            <ul class="btnlist">
+                <li class="active yym" @click="ym()">央媒 <span class="ySpan"> </span></li>
+                <li class="sm ssm" @click="sm()">省媒 <span class="sSpan"></span></li>
+            </ul>
+        </header>
+        <div class="fn-s-container" id="fn-s-container" v-if="num==1">
+            <div class="fn-s-rollnews">
+                <timeline class="fn-s-rolltime" :interval="15000" :url="url.roll" @callback="getDetail" :num="1"></timeline>
+            </div>
+            <div class="fn-s-newsright">
+                <detail :detail="detail"></detail>
+            </div>
+        </div>
+        <div class="fn-s-container" id="fn-s-container">
+            <div class="fn-s-rollnews">
+                <timeline class="fn-s-rolltime" :interval="15000" :url="url.roll2" @callback="getDetail2" :num="2"></timeline>
+            </div>
+            <div class="fn-s-newsright">
+                <detail :detail="detail2"></detail>
+            </div>
+        </div>
+    </div>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-resource.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <script src="../js/toolsbabel-min.js"></script>
+    <script src="../js/reprint-pack.js"></script>
+</body>
+
+</html>
+<script>
+    $.ajax({
+        type : "post",
+        url : "/datas/api/login",
+        data : {
+            username: 'meltmedia_gx',
+            password: 'trsadmingx!@#'
+        },
+        async : false,
+        success : function(res){
+            window.access_token = JSON.parse(res).data
+        }
+    });
+</script>

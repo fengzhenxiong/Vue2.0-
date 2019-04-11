@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>广西日报</title>
+
+</head>
+
+<body>
+    <div id="pc">
+        <v-pc></v-pc>
+    </div>
+    </form>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-router.min.js"></script>
+    <script src="../js/vue-resource.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/echarts/echarts.min.js"></script>
+    <script src="../js/echarts/echarts-wordcloud.min.js"></script>
+    <script src="../js/moment/moment-with-locales.min.js"></script>
+    <script src="../js/echarts/china.js"></script>
+    <script src="../js/guangxi.js"></script>
+    <script src="../js/loadsh.js"></script>
+    <script src="../js/moment.min.js" type="text/javascript"></script>
+    <script src="../js/d3/d3.v3.min.js" type="text/javascript"></script>
+    <script src="../js/toolsbabel-min.js"></script>
+    <script type="text/javascript" src="../js/timeline/timeline.v2.js"></script>
+    <script src="../js/pc-pack.js" type="text/javascript"></script>
+</html>
+<script>
+    $.ajax({
+        type : "post",
+        url : "/api/login",
+        data : {
+            username: 'meltmedia_gx',
+            password: 'trsadmingx!@#'
+        },
+        async : false,
+        success : function(res){
+            // 接口请求必须携带的access_token
+            console.log(res)
+            window.access_token = JSON.parse(res).data
+        }
+    });
+</script>

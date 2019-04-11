@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>广西日报</title>
+    <link rel="stylesheet" type="text/css" href="../css/newsclues.css" />
+</head>
+
+<body>
+    <div class="cluesbox" id="cluesbox">
+        <div class="gx right">
+            <div class="title">
+                <div class="title-pic"><img src="../image/newscircle.png" /> </div>
+                <div class="title-info">全国近期政策</div>
+            </div>
+            <div class="content">
+                <clueslist :list="cnlist"></clueslist>
+            </div>
+        </div>
+        <div class="gx right">
+            <div class="title">
+                <div class="title-pic"><img src="../image/newscircle.png" /> </div>
+                <div class="title-info">广西近期政策</div>
+            </div>
+            <div class="content">
+                <clueslist :list="gxlist"></clueslist>
+            </div>
+        </div>
+        <div class="gx">
+            <div class="title">
+                <div class="title-pic"><img src="../image/newscircle.png" /> </div>
+                <div class="title-info">集团舆情新闻</div>
+            </div>
+            <div class="content">
+                <clueslist :list="jtlist"></clueslist>
+            </div>
+        </div>
+    </div>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-resource.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <script src="../js/toolsbabel-min.js"></script>
+    <script src="../js/newsclues-pack.js"></script>
+</body>
+
+</html>

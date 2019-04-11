@@ -1,0 +1,256 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- <link rel="icon" href="./images/icons/fw_logo.ico" type="image/x-icon" /> -->
+        <title>广西日报</title>
+        <meta name="viewport" content="initial-scale = 1; width=device-width" />
+        <link rel="stylesheet" href="../css/index.css" />
+        <style>
+            .otherUrl {
+                height: 100px;
+                position: fixed;
+                width: 1000px;
+                bottom: 60px;
+                left: 50%;
+                margin-left: -510px;
+                /* background: #fff; */
+            }
+            
+            .line {
+                position: absolute;
+                width: 1000px;
+                height: 3px;
+                background: #fff;
+                opacity: 0.1;
+                top: -40px;
+            }
+            
+            .otherUrl ul {
+                height: 100%;
+                width: 100%;
+                /* display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap; */
+            }
+            
+            .otherUrl ul li {
+                width: 200px;
+                float: left;
+                margin-bottom: 30px;
+                /* width: 100px;
+                height: 100px;
+                box-sizing: border-box;
+                display: table;
+                background-image: linear-gradient(#8b9da9, #fff6e4);
+                box-shadow: inset 0 0 100px hsla(0, 0%, 0%, .3); */
+            }
+            
+            .otherUrl ul li a {
+                /* display: table-cell; */
+                text-decoration: none;
+                text-align: center;
+                color: #ffffff;
+                font-size: 24px;
+                display: block;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                /* vertical-align: middle;
+                text-shadow: 0px 1px 0px rgb(204, 204, 204), 0px 2px 0px rgb(201, 201, 201), 0px 3px 0px rgb(187, 187, 187), 0px 4px 0px rgb(185, 185, 185), 0px 5px 0px rgb(170, 170, 170), 0px 6px 1px rgba(0, 0, 0, 0.1), 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 5px 10px rgba(0, 0, 0, 0.25), 0px 20px 20px rgba(0, 0, 0, 0.15); */
+            }
+            
+            .otherUrl ul li a:hover {
+                color: #00ffff;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form id="form1" runat="server">
+            <header class="fn-s-screenHead">
+                <h3 class="fn-s-headright right">
+                    <img class="fn-s-zmicon" src="../image/icon.png" style="width: 2.21rem;margin-top: 0.8rem;" />
+                    <!-- <span>智闻</span> -->
+                </h3>
+            </header>
+            <div class="fn-s-container">
+                <ul class="fn-s-navs">
+                    <li class="card trace">
+                        <a href="./chuanbo/index.html" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-traceicon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                传播效果
+                            </div>
+                        </a>
+                    </li>
+                    <li class="card timeline">
+                        <a href="./shijian/index.html" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-tlicon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                事件跟踪
+                            </div>
+                        </a>
+                    </li>
+                    <li class="card wordcloud">
+                        <a href="reprint.html" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-wcicon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                转载情况
+                            </div>
+                        </a>
+                    </li>
+                    <li class="card spread">
+                        <!--<div class="disable"></div>-->
+                        <a href="release.html" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-spreadicon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                两微一端
+                            </div>
+                        </a>
+                    </li>
+                    <li class="card pagecompare">
+                        <a href="contrast.html" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-pcicon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                版面对比
+                            </div>
+                        </a>
+                    </li>
+                   </ul>
+
+                <ul class="fn-s-navs1">
+                    <li class="card leaders ">
+                        <!--<div class="disable"></div>-->
+                        <a href="http://172.17.79.36:8081/map-gx/dist/pages/index/index.html" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-leadersicon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                视屏通话
+                            </div>
+                        </a>
+                    </li>
+                    <li class="card sidenews">
+                        <a href="hot.html#/hotword" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-snicon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                热点热词
+                            </div>
+                        </a>
+                    </li>
+                    <li class="card push">
+                        <a href="newsclues.html" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-pushicon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                新闻线索
+                            </div>
+                        </a>
+                    </li>
+                    <li class="card rollnews">
+                        <!--<div class="disable"></div>-->
+                        <a href="classifiedNews.html" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-rnicon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                分类热点
+                            </div>
+                        </a>
+                    </li>
+                    <li class="card newmedia">
+                        <!--<div class="disable"></div>-->
+                        <a href="hot.html#/sentiment" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-nmicon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                涉桂舆情
+                            </div>
+                        </a>
+                    </li>
+                    <li class="card scrollnews">
+                        <!--<div class="disable"></div>-->
+                        <a href="http://172.17.79.36:8081/guangxi_four/index.html" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-srnicon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                四合一
+                            </div>
+                        </a>
+                    </li>
+                    <!-- <li class="card wordsrel" style="display:none;">
+                        -- <div class="disable"></div>  --
+                        <a href="./page/wordsrelation.aspx" target="_blank">
+                            <div class="fn-s-top">
+                                <span class="fn-s-icon fn-s-wricon"></span>
+                            </div>
+                            <div class="fn-s-bot">
+                                词关系
+                            </div>
+                        </a>
+                    </li> -->
+                </ul>
+                <!-- <div class="otherUrl">
+                    <div class="line"></div>
+                    <ul>
+
+                    </ul>
+                </div> -->
+            </div>
+        </form>
+        <script src="../js/jquery-1.10.2.min.js" type="text/javascript"></script>
+        <script src="../js/toolsbabel-min.js"></script>
+        <script>
+            // tools.requestNewdata(
+            //     this, {
+            //         whatDo: "ScreenModuleGetList",
+            //     },
+            //     function(data) {
+            //         console.log(data)
+            //     },
+            //     function() {
+            //         console.log("请求模块列表出错");
+            //     }
+            // );
+            // $.ajax({
+            //     type: "get",
+            //     url: "/api/screen_api.ashx?whatdo=ScreenModuleGetList&departid=451",
+            //     success: function(data) {
+            //         console.log(JSON.parse(data))
+            //         var list = JSON.parse(data).obj.list;
+            //         var text = ""
+            //         list.forEach((item, i) => {
+            //             text += "<li><a href='" + item.pageurl + "?id=" + item.id + "'target='_blank' >" + item.title + "</a></li>"
+            //         });
+            //         console.log()
+            //         $(".otherUrl ul").html(text)
+            //     },
+            //     error: function(data) {
+
+            //     },
+            //     complete: function() {
+
+            //     }
+            // })
+        </script>
+    </body>
+
+    </html>

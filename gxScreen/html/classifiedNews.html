@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>广西日报</title>
+    <link rel="stylesheet" type="text/css" href="../css/classifiedNews.css" />
+</head>
+
+<body>
+    <div class="newsbox" id="newsbox">
+        <div class="switchbox">
+            <ul class="btnlist">
+                <li class="active" @click=getdata(0)>时政新闻</li>
+                <li @click=getdata(1)>财经新闻</li>
+                <li @click=getdata(2)>科技新闻</li>
+                <li @click=getdata(3)>教育新闻</li>
+                <li @click=getdata(4)>文化新闻</li>
+            </ul>
+        </div>
+        <div class="infobox">
+            <news :list="dataone"></news>
+        </div>
+    </div>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-router.min.js"></script>
+    <script src="../js/vue-resource.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/echarts/echarts.min.js"></script>
+    <script src="../js/moment.min.js" type="text/javascript"></script>
+    <script src="../js/toolsbabel-min.js"></script>
+    <script src="../js/classifiedNews-pack.js" type="text/javascript"></script>
+</body>
+
+</html>

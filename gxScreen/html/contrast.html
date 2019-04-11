@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>广西日报</title>
+    <link rel="stylesheet" type="text/css" href="../css/pagecom.css" />
+</head>
+
+<body>
+    <header class="fn-s-screenHead">
+        <!-- <h3 class="fn-s-headleft left">
+                <a>
+                    <img class="fn-s-zmicon" src="/images/prd/cd_logo.png" />
+                    <span>成都传媒集团</span>
+                </a>
+            </h3>
+            <h3 class="fn-s-headright right">
+                <img class="fn-s-subimg" src="/images/prd/headlines.svg" />
+                <span class="fn-s-headintro">版面对比</span>
+            </h3> -->
+    </header>
+    <div class="fn-s-container" id="fn-s-container">
+        <div class="fn-s-content clearfix">
+            <div class="fn-s-left left">
+                <load :show="loadshow"></load>
+                <div class="fn-s-out">
+                    <ul v-show="!loadshow&&!error" class="fn-s-inner">
+                        <li class="active">
+                            <img :src="leftpaper.img" />
+                            <div class="fn-s-paperdetail clearfix">
+                                <span class="fn-s-papername left">{{leftpaper.papername}}</span>
+                                <span class="fn-s-papertime right">{{leftpaper.time}}<span class="fn-s-tag">今天</span></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <warn :show="error"></warn>
+                <span class="fn-s-ctrl fn-s-prev"></span>
+                <span class="fn-s-ctrl fn-s-next"></span>
+            </div>
+            <div class="fn-s-right right">
+                <load :show="loadshow"></load>
+                <div class="fn-s-out">
+                    <ul v-show="!loadshow&&!error" class="fn-s-inner">
+                        <li v-for="(pa, index) in papers" :class="{active: curindex==index}">
+                            <div class="fn-s-single left" v-for="(p, index) in pa">
+                                <img :src="p.img" />
+                                <div class="fn-s-paperdetail clearfix">
+                                    <span class="fn-s-papername left">{{p.papername}}</span>
+                                    <span class="fn-s-papertime right">{{p.time}}<span class="fn-s-tag">今天</span></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <warn :show="error"></warn>
+                <span class="fn-s-ctrl fn-s-prev" @click="prev"></span>
+                <span class="fn-s-ctrl fn-s-next" @click="next"></span>
+            </div>
+        </div>
+    </div>
+    <div class="fn-s-copyright">
+        <!--<a href="http://www.hzfanwen.com/" target="_blank">-->
+            <!--<img src="../image/copyright.png" />-->
+        <!--</a>-->
+    </div>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-resource.min.js"></script>
+    <script src="../js/tools-pack.js"></script>
+    <script src="../js/pagecontrast-pack.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+</body>
+
+</html>
+<script>
+    $.ajax({
+        type : "post",
+        url : "/datas/api/login",
+        data : {
+            username: 'meltmedia_gx',
+            password: 'trsadmingx!@#'
+        },
+        async : false,
+        success : function(res){
+            // 接口请求必须携带的access_token
+            window.access_token = JSON.parse(res).data
+        }
+    });
+</script>
